@@ -1,23 +1,17 @@
-# Nextra Docs Template 
+# Nextra Docs Template
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+Este é um site para documentações criado com [Nextra](https://nextra.site).
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+[**Acessar Site →**](https://alexanderiscoding.com)
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
+[![](public/og.png)](https://alexanderiscoding.com)
 
-## Quick Start
+## Desenvolvimento local
 
-Click the button to clone this repository and deploy it on Vercel:
+Primeiro, execute `pnpm i` para instalar as dependências.
 
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
+Em seguida, execute `pnpm dev` para iniciar o servidor de desenvolvimento e acesse localhost:3000.
 
-## Local Development
+## Licença
 
-First, run `pnpm i` to install the dependencies.
-
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
-
-## License
-
-This project is licensed under the MIT License.
+Este projeto está licenciado sob a licença MIT.
