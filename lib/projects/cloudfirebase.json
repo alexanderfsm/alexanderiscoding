@@ -1,0 +1,12 @@
+[
+  {
+    "name": "ReceiverFeedback",
+    "description": "🎊 API para envio de feedbacks",
+    "link": "https://github.com/alexanderiscoding/ReceiverFeedback"
+  },
+  {
+    "name": "CaptureLogger",
+    "description": "🛠 API para registros de eventos dos sistemas",
+    "link": "https://github.com/alexanderiscoding/CaptureLogger"
+  }
+]

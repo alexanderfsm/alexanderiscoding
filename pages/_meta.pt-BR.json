@@ -10,8 +10,39 @@
   "404": {
     "type": "page",
     "theme": {
-      "timestamp": false,
-      "typesetting": "article"
+      "typesetting": "article",
+      "timestamp": false
     }
+  },
+  "vdp": {
+    "title": "VDP",
+    "type": "page"
+  },
+  "privacy": {
+    "title": "Privacidade",
+    "type": "page"
+  },
+  "terms": {
+    "title": "Termos",
+    "type": "page"
+  },
+  "services": {
+    "title": "Serviços",
+    "type": "page",
+    "theme": {
+      "timestamp": false
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "type": "page",
+    "theme": {
+      "timestamp": false
+    }
+  },
+  "contact": {
+    "title": "Contato ↗",
+    "type": "page",
+    "href": "mailto:github@alexanderiscoding.com"
   }
 }

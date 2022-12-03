@@ -36,7 +36,9 @@ const config: DocsThemeConfig = {
       titleTemplate: "%s – Alexanderiscoding",
     };
   },
-  footer: { component: null },
+  footer: {
+    text: <span>MIT {new Date().getFullYear()} © Alexanderiscoding - Repositório de documentação sobre desenvolvimento.</span>,
+  },
   nextThemes: {
     defaultTheme: "system",
     storageKey: "theme",
@@ -49,6 +51,9 @@ const config: DocsThemeConfig = {
     loading: "Procurando...",
   },
   i18n: [{ locale: "pt-BR", text: "Português Brasileiro" }],
+  notFound: {
+    labels: "Envie um problema sobre link quebrado →",
+  },
 };
 
 export default config;
