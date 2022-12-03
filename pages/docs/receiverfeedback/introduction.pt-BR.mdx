@@ -1,0 +1,94 @@
+---
+title: ReceiverFeedback
+---
+
+## Configurando o projeto
+
+- É necessário o CloudFirebase estar configurado
+- Faça um fork do repositório no github
+- Crie um novo projeto na vercel com seu repositório
+
+**Ao configurar um projeto na vercel, adicione as Environment Variables:**
+
+NAME: `TOKEN`
+
+VALUE: `token gerado`
+
+**Como gerar novos tokens**
+
+Para token com 32 caracteres: `https://generate-secret.vercel.app/32`
+
+Para token com 64 caracteres: `https://generate-secret.vercel.app/64`
+
+**Adicione também as Environment Variables do CloudFirebase:**
+
+NAME: `CLOUD_HOST`
+
+VALUE: `dominio hospedado na vercel do CloudFirebase`
+
+NAME: `CLOUD_TOKEN`
+
+VALUE: `mesmo token do CloudFirebase`
+
+**Para configurar as notificações, Adicione também as do SenderNotification:**
+
+NAME: `SENDER_HOST`
+
+VALUE: `dominio hospedado na vercel do SenderNotification`
+
+NAME: `SENDER_TOKEN`
+
+VALUE: `mesmo token do SenderNotification`
+
+NAME: `SENDER_SERVICE`
+
+VALUE: Number | `1` - telegram `2` - discord `3` - slack `4` - google chat
+
+NAME: `SENDER_MODE`
+
+VALUE: Number | `1` - somente mensagem `2` - mensagem com botão `3` - mensagem completa com botão
+
+import { Callout } from "nextra-theme-docs";
+
+<Callout>É necessário fazer o Redeploy with existing Build Cache, após alterar as Environment Variables, se elas já estiverem configuradas.</Callout>
+
+## API
+
+### URL
+
+```
+https://examplename.vercel.app.com/api/new
+```
+
+### Método de uso
+
+```js
+fetch("https://examplename.vercel.app.com/api/new", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+  },
+  body: JSON.stringify({
+    level: 3,
+    text: "feedback",
+    source: "origin from receiver feedback (website, desktop app, mobile app)",
+    version: "1.0"
+  }),
+});
+```
+
+### Parâmetros para envio
+
+- `level`: Number | 1, 2, 3, 4 ou 5
+- `text`: String
+- `source`: String
+- `version`: String
+- `message`: String | Mensagem personalizada (Opcional)
+- `application`: String (Opcional)
+
+### Parâmetros de resposta
+
+- `200`: Retorna o código do documento criado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido

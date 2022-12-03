@@ -1,0 +1,19 @@
+{
+  "cloudfirebase": "CloudFirebase",
+  "capturelogger": {
+    "title": "CaptureLogger",
+    "type": "page"
+  },
+  "youdramalist": {
+    "title": "YouDramaList",
+    "type": "page"
+  },
+  "receiverfeedback": {
+    "title": "ReceiverFeedback",
+    "type": "page"
+  },
+  "sendernotification": {
+    "title": "SenderNotification",
+    "type": "page"
+  }
+}

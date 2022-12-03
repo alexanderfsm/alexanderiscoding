@@ -1,0 +1,159 @@
+---
+title: CaptureLogger
+---
+
+## Configurando o projeto
+
+- É necessário o CloudFirebase estar configurado
+- Faça um fork do repositório no github
+- Crie um novo projeto na vercel com seu repositório
+
+**Ao configurar um projeto na vercel, adicione as Environment Variables:**
+
+NAME: `TOKEN`
+
+VALUE: `token gerado`
+
+NAME: `ACCESS_TOKEN`
+
+VALUE: `token gerado`
+
+**Como gerar novos tokens**
+
+Para token com 32 caracteres: `https://generate-secret.vercel.app/32`
+
+Para token com 64 caracteres: `https://generate-secret.vercel.app/64`
+
+**Adicione também as Environment Variables do CloudFirebase:**
+
+NAME: `CLOUD_HOST`
+
+VALUE: `dominio hospedado na vercel do CloudFirebase`
+
+NAME: `CLOUD_TOKEN`
+
+VALUE: `mesmo token do CloudFirebase`
+
+**Para configurar as notificações, Adicione também as do SenderNotification:**
+
+NAME: `SENDER_HOST`
+
+VALUE: `dominio hospedado na vercel do SenderNotification`
+
+NAME: `SENDER_TOKEN`
+
+VALUE: `mesmo token do SenderNotification`
+
+NAME: `SENDER_SERVICE`
+
+VALUE: Number | `1` - telegram `2` - discord `3` - slack `4` - google chat
+
+NAME: `SENDER_MODE`
+
+VALUE: Number | `1` - somente mensagem `2` - mensagem com botão `3` - mensagem completa com botão
+
+import { Callout } from "nextra-theme-docs";
+
+<Callout>É necessário fazer o Redeploy with existing Build Cache, após alterar as Environment Variables, se elas já estiverem configuradas.</Callout>
+
+## react-native-capturelogger
+
+Um package construido para utilizar a API no desenvolvimento de aplicativos React Native.
+
+- Execute `npm i react-native-capturelogger` para instalar o package
+- Execute `npm i react-native-device-info` para instalar a dependência do package
+
+### Configurando o package
+
+Adicione em seu package.json as definições necessárias
+
+- `CaptureLogger`: Boolean | `true` Envia os erros para a nuvem | `false` Mostra os loggers no console
+- `CaptureLoggerHost`: String | Preencha com o dominio hospedado na vercel do CaptureLogger
+- `CaptureLoggerAccessToken`: String | Preencha com o access token do CaptureLogger
+- `CaptureLoggerBundleID`: Boolean | Envia `application bundle identifier` para a nuvem
+- `CaptureLoggerIgnore`: Object | Preencha com o/os `error.code from catch` a ser ignorado ao enviar
+
+Exemplo de um package.json
+
+```json
+{
+  "name": "builder",
+  "version": "1.0",
+  "private": true,
+  "CaptureLogger": true,
+  "CaptureLoggerHost": "https://examplename.vercel.app.com",
+  "CaptureLoggerAccessToken": "e632efe_token_here_5452b",
+  "CaptureLoggerBundleID": true,
+  "CaptureLoggerIgnore": [
+    "ERR_NETWORK"
+  ],
+  "scripts": {
+    "android": "react-native run-android"
+  }
+}
+```
+
+### Método de uso
+
+Importe o package na sua aplicação
+
+`import { registerLogger } from 'react-native-capturelogger';`
+
+Registre os logs de evento
+
+`registerLogger(type, action, input, output, ignore, message);`
+
+- `type`: Number | 1 - `info` 2 - `warn` 3 - `error`
+- `action`: String | Nome do código de referência
+- `input`: Variable | Dados inseridos no código de referência
+- `output`: Variable | Dados retornados do código de referência
+- `ignore`: String | `error.code from catch` a ser ignorado ao enviar
+- `message`: String | Mensagem personalizada (Opcional)
+
+> Log e Warn não são enviados para a nuvem.
+
+> output.code pode ser incluido no output para filtrar, ou pode ser um error code de um catch
+
+> Exemplo de output.code: ERR_NETWORK
+
+## API
+
+### URL
+
+```
+https://examplename.vercel.app.com/api/new
+```
+
+### Método de uso
+
+```js
+fetch("https://examplename.vercel.app.com/api/new", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    action: "function name or action name",
+    input: "parameters receive in function",
+    output: "response of function",
+    version: "1.0"
+  }),
+});
+```
+
+### Parâmetros para envio
+
+- `action`: String
+- `input`: String
+- `output`: String
+- `version`: String
+- `message`: String | Mensagem personalizada (Opcional)
+- `application`: String (Opcional)
+
+### Parâmetros de resposta
+
+- `200`: Retorna o código do documento criado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido

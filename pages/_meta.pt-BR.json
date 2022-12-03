@@ -40,6 +40,11 @@
       "timestamp": false
     }
   },
+  "docs": {
+    "title": "Documentação",
+    "type": "page",
+    "display": "hidden"
+  },
   "contact": {
     "title": "Contato ↗",
     "type": "page",
