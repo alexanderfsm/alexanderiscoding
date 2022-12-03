@@ -25,8 +25,8 @@ const config: DocsThemeConfig = {
       <meta name="apple-mobile-web-app-title" content="Alexanderiscoding" />
       <link rel="apple-touch-icon" sizes="180x180" href="https://alexanderiscoding.com/apple-icon-180x180.png" />
       <link rel="icon" type="image/png" sizes="192x192" href="https://alexanderiscoding.com/android-icon-192x192.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="https://alexanderiscoding.com/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="96x96" href="https://alexanderiscoding.com/favicon-96x96.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="https://alexanderiscoding.com/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="https://alexanderiscoding.com/favicon-16x16.png" />
       <meta name="msapplication-TileImage" content="https://alexanderiscoding.com/ms-icon-144x144.png" />
     </>
