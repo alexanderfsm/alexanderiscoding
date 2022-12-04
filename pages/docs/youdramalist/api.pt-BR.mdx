@@ -1,0 +1,24 @@
+## API
+
+### URL
+
+```
+https://ydl.alexanderiscoding.com/api/title/ID
+```
+
+### Método de uso
+
+```js
+const response = await fetch("https://ydl.alexanderiscoding.com/api/title/ID");
+const drama = await response.json();
+```
+
+### Parâmetros para envio
+
+- `ID`: identificador unico para cada drama do MyDramaList [(Exemplo ID: 10686)](https://mydramalist.com/10686-blade-man)
+
+### Parâmetros de resposta
+
+- `200`: Retorna as informações do drama
+- `401`: Retorna a mensagem de código incorreto
+- `404`: Retorna a mensagem de drama ainda não catalogado

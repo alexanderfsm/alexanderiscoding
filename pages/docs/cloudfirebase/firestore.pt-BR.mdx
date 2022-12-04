@@ -1,166 +1,129 @@
----
-title: CloudFirebase
----
-## Configurando o projeto
+# Firestore
 
-- Faça um fork do repositório no github
-- Crie um novo projeto e inicialize os serviços que vão ser usados no Firebase
-- Baixe o Admin SDK Firebase para Node.js em Configurações do projeto > Contas de serviço
-- Altere o nome para serviceAccountKey.json e faça upload no repositório
-- Crie um novo projeto na vercel com seu repositório
-
-**Ao configurar um projeto na vercel, adicione as Environment Variables:**
-
-NAME: `TOKEN`
-
-VALUE: `token gerado`
-
-**Como gerar novos tokens**
-
-Para token com 32 caracteres: `https://generate-secret.vercel.app/32`
-
-Para token com 64 caracteres: `https://generate-secret.vercel.app/64`
-
-**Para configurar a criptografia e descriptografia de dados, adicione também:**
-
-NAME: `SERVER_KEY`
-
-VALUE: `chave criptográfica`
-
-**Para configurar o Realtime Database, adicione também:**
-
-NAME: `DATABASE_NAME`
-
-VALUE: `DATABASE_NAME.firebaseio.com, adicione apenas o nome`
-
-import { Callout } from 'nextra-theme-docs'
-
-<Callout>
-  É necessário fazer o Redeploy with existing Build Cache, após alterar as Environment Variables, se elas já estiverem configuradas.
-</Callout>
-
-## Firestore
-
-### Criar um novo documento
+## Criar um novo documento
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/create', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/create", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
-      name: "tablename"
+      name: "tablename",
     },
     column: {
       columnname: "columndata",
-      columnname2: "columndata2"
-    }
-  })
+      columnname2: "columndata2",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente ou a ser criada
 - `columnname`: Nome da coluna do documento a ser criado
 - `columndata`: Dados que serão inseridos na coluna do documento a ser criado
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna o código do documento criado
 - `401`: Retorna a mensagem de permissão insuficiente
 - `406`: Retorna a mensagem de dados insuficiente
 - `500`: Retorna o erro ocorrido
 
-### Deletar documento
+## Deletar documento
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/delete', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/delete", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
-      name: "tablename"
+      name: "tablename",
     },
     column: {
-      id: "documentid"
-    }
-  })
+      id: "documentid",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente
 - `id`: ID do documento a ser excluido
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna mensagem de documento excluido
 - `401`: Retorna a mensagem de permissão insuficiente
 - `406`: Retorna a mensagem de dados insuficiente
 
-### Deletar campo do documento
+## Deletar campo do documento
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/delete', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/delete", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
-      name: "tablename"
+      name: "tablename",
     },
     column: {
       id: "documentid",
       delete: "true",
-      name: "fieldname"
-    }
-  })
+      name: "fieldname",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente
 - `id`: ID do documento do campo
 - `delete`: Obrigatório ser true
 - `name`: Nome do campo a ser excluido
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna mensagem de campo excluido
 - `401`: Retorna a mensagem de permissão insuficiente
 - `406`: Retorna a mensagem de dados insuficiente
 
-### Deletar lista de documentos
+## Deletar lista de documentos
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/delete', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/delete", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
-      name: "tablename"
+      name: "tablename",
     },
     column: {
       where: "true",
       name: "fieldname",
       operator: "==",
-      value: "fieldvalue"
-    }
-  })
+      value: "fieldvalue",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente
 - `where`: Obrigatório ser true
@@ -168,67 +131,69 @@ fetch('https://examplename.vercel.app/api/firestore/delete', {
 - `operator`: Operador de comparação
 - `value`: Valor do campo
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna mensagem de todos os documentos excluidos
 - `401`: Retorna a mensagem de permissão insuficiente
 - `404`: Retorna se não achar documentos a ser excluido
 - `406`: Retorna a mensagem de dados insuficiente
 
-### Ler documento
+## Ler documento
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/read', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/read", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
-      name: "tablename"
+      name: "tablename",
     },
     column: {
-      id: "documentid"
-    }
-  })
+      id: "documentid",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente
 - `id`: ID do documento
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna o conteúdo do documento
 - `401`: Retorna a mensagem de permissão insuficiente
 - `404`: Retorna se não achar o documento
 - `406`: Retorna a mensagem de dados insuficiente
 
-### Ler lista de documento
+## Ler lista de documento
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/read', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/read", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
-      name: "tablename"
+      name: "tablename",
     },
     column: {
       where: "true",
       name: "fieldname",
       operator: "==",
-      value: "fieldvalue"
-    }
-  })
+      value: "fieldvalue",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente
 - `where`: Obrigatório ser true
@@ -236,121 +201,124 @@ fetch('https://examplename.vercel.app/api/firestore/read', {
 - `operator`: Operador de comparação
 - `value`: Valor do campo
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna o conteúdo de todos os documentos
 - `401`: Retorna a mensagem de permissão insuficiente
 - `404`: Retorna se não achar documentos a ser lidos
 - `406`: Retorna a mensagem de dados insuficiente
 
-### Atualizar documento
+## Atualizar documento
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/update', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/update", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
       name: "YouDramaList",
-      id: "uKX3jYQYSYbiMsZv9KYR"
+      id: "uKX3jYQYSYbiMsZv9KYR",
     },
     column: {
       columnname: "columndata",
-      columnname2: "columndata2"
-    }
-  })
+      columnname2: "columndata2",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente
 - `tableid`: Nome do documento existente
 - `columnname`: Nome da coluna do documento a ser atualizado
 - `columndata`: Dados que serão inseridos na coluna do documento a ser atualizado
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de documento atualizado
 - `401`: Retorna a mensagem de permissão insuficiente
 - `406`: Retorna a mensagem de dados insuficiente
 - `500`: Retorna o erro ocorrido
 
-### Mesclar documento
+## Mesclar documento
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/merge', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/merge", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
       name: "YouDramaList",
-      id: "uKX3jYQYSYbiMsZv9KYR"
+      id: "uKX3jYQYSYbiMsZv9KYR",
     },
     column: {
       columnname: "columndata",
-      columnname2: "columndata2"
-    }
-  })
+      columnname2: "columndata2",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente
 - `tableid`: Nome do documento existente
 - `columnname`: Nome da coluna do documento a ser atualizado
 - `columndata`: Dados que serão inseridos na coluna do documento a ser atualizado
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna mensagem de documento mesclado
 - `401`: Retorna a mensagem de permissão insuficiente
 - `406`: Retorna a mensagem de dados insuficiente
 - `500`: Retorna o erro ocorrido
 
-### Páginação de documentos
+## Páginação de documentos
 
 É necessário os dados terem uma coluna com timestamp
 
-Adicione no final do column ao criar um documento ```timestamp: new Date().getTime()```
+Adicione no final do column ao criar um documento `timestamp: new Date().getTime()`
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/pagination', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/pagination", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
-      name: "CaptureLogger"
+      name: "CaptureLogger",
     },
     column: {
       timestamp: timestamp,
-      limit: 20
-    }
-  })
+      limit: 20,
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente
 - `timestamp`: Precisa ser 0, na primeira consulta, após definir com `next` retornado na consulta
 - `limit`: Limite de dados retornado por consulta
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna os documentos encontrado
 - `401`: Retorna a mensagem de permissão insuficiente
 - `404`: Retorna se não achar documentos a ser lidos
 - `406`: Retorna a mensagem de dados insuficiente
 
-### Filtrar a páginação de documentos
+## Filtrar a páginação de documentos
 
 ```js
 fetch('https://examplename.vercel.app/api/firestore/pagination', {
@@ -374,7 +342,8 @@ fetch('https://examplename.vercel.app/api/firestore/pagination', {
   })
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente
 - `where`: Obrigatório ser true
@@ -384,71 +353,73 @@ fetch('https://examplename.vercel.app/api/firestore/pagination', {
 - `timestamp`: Precisa ser 0, na primeira consulta, após definir com `next` retornado na consulta
 - `limit`: Limite de dados retornado por consulta
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna os documentos encontrado
 - `401`: Retorna a mensagem de permissão insuficiente
 - `404`: Retorna se não achar documentos a ser lidos
 - `406`: Retorna a mensagem de dados insuficiente
 
-### Criar documento criptografado com chave do servidor
+## Criar documento criptografado com chave do servidor
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/encrypt', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/encrypt", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
-      name: "tablename"
+      name: "tablename",
     },
     column: {
       columnname: "columndata",
-      columnname2: "columndata2"
-    }
-  })
+      columnname2: "columndata2",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente ou a ser criada
 - `columnname`: Nome da coluna do documento a ser criado
 - `columndata`: Dados que serão inseridos na coluna do documento a ser criado
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna o código do documento criado
 - `401`: Retorna a mensagem de permissão insuficiente
 - `406`: Retorna a mensagem de dados insuficiente
 - `500`: Retorna o erro ocorrido
 
-### Ler documento criptografado com chave do servidor
+## Ler documento criptografado com chave do servidor
 
 ```js
-fetch('https://examplename.vercel.app/api/firestore/decrypt', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/firestore/decrypt", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     table: {
-      name: "tablename"
+      name: "tablename",
     },
     column: {
-      id: "documentid"
-    }
-  })
+      id: "documentid",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `tablename`: Nome da tabela existente
 - `id`: ID do documento
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna o conteúdo do documento
 - `401`: Retorna a mensagem de permissão insuficiente
@@ -458,149 +429,154 @@ fetch('https://examplename.vercel.app/api/firestore/decrypt', {
 
 ## Realtime Database
 
-### Criar um novo documento
+## Criar um novo documento
 
 ```js
-fetch('https://examplename.vercel.app/api/database/create', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/database/create", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     name: "tablename",
     id: "documentname",
     column: {
       columnname: "columndata",
-      columnname2: "columndata2"
-    }
-  })
+      columnname2: "columndata2",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `name`: Nome da tabela existente ou a ser criada
 - `id`: Nome do documento a ser criado
 - `columnname`: Nome da coluna do documento a ser criado
 - `columndata`: Dados que serão inseridos na coluna do documento a ser criado
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de documento criado
 - `401`: Retorna a mensagem de permissão insuficiente
 - `406`: Retorna a mensagem de dados insuficiente
 - `500`: Retorna o erro ocorrido
 
-### Criar um novo documento aleatório
+## Criar um novo documento aleatório
 
 ```js
-fetch('https://examplename.vercel.app/api/database/create', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/database/create", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     name: "tablename",
     random: true,
     column: {
       columnname: "columndata",
-      columnname2: "columndata2"
-    }
-  })
+      columnname2: "columndata2",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `name`: Nome da tabela existente ou a ser criada
 - `random`: Obrigatório ser true
 - `columnname`: Nome da coluna do documento a ser criado
 - `columndata`: Dados que serão inseridos na coluna do documento a ser criado
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna o código do documento criado
 - `401`: Retorna a mensagem de permissão insuficiente
 - `406`: Retorna a mensagem de dados insuficiente
 - `500`: Retorna o erro ocorrido
 
-### Atualizar um documento
+## Atualizar um documento
 
 ```js
-fetch('https://examplename.vercel.app/api/database/update', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/database/update", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
     name: "tablename",
     id: "documentname",
     column: {
       columnname: "columndata",
-      columnname2: "columndata2"
-    }
-  })
+      columnname2: "columndata2",
+    },
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `name`: Nome da tabela existente
 - `id`: Nome do documento existente
 - `columnname`: Nome da coluna do documento a ser atualizado
 - `columndata`: Dados que serão inseridos na coluna do documento a ser atualizado
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de documento atualizado
 - `401`: Retorna a mensagem de permissão insuficiente
 - `406`: Retorna a mensagem de dados insuficiente
 - `500`: Retorna o erro ocorrido
 
-### Ler documento
+## Ler documento
 
 ```js
-fetch('https://examplename.vercel.app/api/database/read', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/database/read", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
-    id: "tablename/documentname"
-  })
+    id: "tablename/documentname",
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `id`: Nome do documento existente com referência completa
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna o conteúdo do documento
 - `401`: Retorna a mensagem de permissão insuficiente
 - `406`: Retorna a mensagem de dados insuficiente
 - `500`: Retorna o erro ocorrido
 
-### Ler lista de documento
+## Ler lista de documento
 
 ```js
-fetch('https://examplename.vercel.app/api/database/read', {
-  method: 'POST',
+fetch("https://examplename.vercel.app/api/database/read", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'e632efe_token_here_5452b'
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
   },
   body: JSON.stringify({
-    name: "tablename"
-  })
+    name: "tablename",
+  }),
 });
 ```
-#### Parâmetros para envio
+
+### Parâmetros para envio
 
 - `name`: Nome da tabela existente
 
-#### Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna o conteúdo de todos os documentos
 - `401`: Retorna a mensagem de permissão insuficiente

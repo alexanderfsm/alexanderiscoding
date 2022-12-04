@@ -7,16 +7,16 @@
   {
     "name": "SenderNotification",
     "description": "🔔 API para envio de notificações para seus serviços",
-    "link": "https://github.com/alexanderiscoding/ReceiverFeedback"
+    "link": "/docs/sendernotification/introduction"
   },
   {
     "name": "ReceiverFeedback",
     "description": "🎊 API para envio de feedbacks",
-    "link": "https://github.com/alexanderiscoding/ReceiverFeedback"
+    "link": "/docs/receiverfeedback/introduction"
   },
   {
     "name": "CaptureLogger",
     "description": "🛠 API para registros de eventos dos sistemas",
-    "link": "https://github.com/alexanderiscoding/CaptureLogger"
+    "link": "/docs/capturelogger/introduction"
   }
 ]

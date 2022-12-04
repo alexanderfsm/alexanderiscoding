@@ -52,7 +52,19 @@ const config: DocsThemeConfig = {
   },
   i18n: [{ locale: "pt-BR", text: "Português Brasileiro" }],
   notFound: {
-    labels: "Envie um problema sobre link quebrado →",
+    content: "Envie um problema sobre link quebrado →",
+    labels: "notfound",
+  },
+  serverSideError: {
+    content: "Envie um problema sobre esse erro →",
+    labels: "error",
+  },
+  feedback: {
+    content: "Dúvidas? Nos dê feedback →",
+    labels: "feedback",
+  },
+  editLink: {
+    text: "Edite essa página no GitHub →",
   },
 };
 
