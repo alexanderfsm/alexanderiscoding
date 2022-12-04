@@ -758,3 +758,153 @@ html.dark .icon-circle {
     background-position: -200% 0;
   }
 }
+
+/* cards */
+.docs-cards {
+  display: grid;
+  --rows: 3;
+  grid-template-columns: repeat(auto-fill,
+      minmax(max(250px, calc((100% - 1rem * 2) / var(--rows))), 1fr));
+}
+
+.docs-card:hover svg {
+  color: currentColor;
+}
+
+.docs-card svg {
+  width: 1.5rem;
+  color: #00000033;
+  transition: color 0.3s ease;
+}
+
+.docs-card p {
+  margin-top: 0.5rem;
+}
+
+.docs-card .docs-title {
+  display: flex;
+  font-weight: 600;
+  align-items: flex-start;
+}
+
+.dark .docs-card svg {
+  color: #ffffff66;
+}
+
+.dark .docs-card:hover svg {
+  color: currentColor;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81/var(--tw-text-opacity));
+}
+
+.dark .dark\:text-neutral-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 229 229/var(--tw-text-opacity));
+}
+
+.dark .dark\:shadow-none {
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.dark .dark\:border-neutral-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(38 38 38/var(--tw-border-opacity));
+}
+
+.duration-200 {
+  transition-duration: 0.2s;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+.shadow-gray-100 {
+  --tw-shadow-color: #f3f4f6;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.no-underline {
+  text-decoration-line: none;
+}
+
+.text-current {
+  color: currentcolor;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235/var(--tw-border-opacity));
+}
+
+.border {
+  border-width: 1px;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.dark .dark\:hover\:shadow-none:hover {
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.dark .dark\:hover\:bg-neutral-900:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 23 23/var(--tw-bg-opacity));
+}
+
+.dark .dark\:hover\:border-neutral-700:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(64 64 64/var(--tw-border-opacity));
+}
+
+.hover\:shadow-gray-100:hover {
+  --tw-shadow-color: #f3f4f6;
+  --tw-shadow: var(--tw-shadow-colored);
+}

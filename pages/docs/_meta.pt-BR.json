@@ -1,5 +1,8 @@
 {
-  "cloudfirebase": "CloudFirebase",
+  "cloudfirebase": {
+    "title": "CloudFirebase",
+    "type": "page"
+  },
   "capturelogger": {
     "title": "CaptureLogger",
     "type": "page"

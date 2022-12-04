@@ -42,8 +42,7 @@
   },
   "docs": {
     "title": "Documentação",
-    "type": "page",
-    "display": "hidden"
+    "type": "page"
   },
   "contact": {
     "title": "Contato ↗",
