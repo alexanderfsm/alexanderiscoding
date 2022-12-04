@@ -1,3 +1,9 @@
 {
-  "introduction": "Introdução"
+  "introduction": "Introdução",
+  "configuration": "Configuração",
+  "apis": "APIs",
+  "complements": {
+    "title": "Complementos",
+    "type": "page"
+  }
 }

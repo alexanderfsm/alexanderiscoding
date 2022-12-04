@@ -1,22 +1,22 @@
 [
   {
     "name": "CloudFirebase",
-    "description": "🛰 API para comunicações e alterações com o Firebase",
+    "description": "🛰 API para comunicações com o Firebase",
     "link": "/docs/cloudfirebase/introduction"
   },
   {
     "name": "SenderNotification",
-    "description": "🔔 API para envio de notificações para seus serviços",
+    "description": "🔔 API para envio de notificações",
     "link": "/docs/sendernotification/introduction"
   },
   {
     "name": "ReceiverFeedback",
-    "description": "🎊 API para envio de feedbacks",
+    "description": "🎊 API para recebimento de feedbacks",
     "link": "/docs/receiverfeedback/introduction"
   },
   {
     "name": "CaptureLogger",
-    "description": "🛠 API para registros de eventos dos sistemas",
+    "description": "🛠 API para visualizações de logs",
     "link": "/docs/capturelogger/introduction"
   }
 ]

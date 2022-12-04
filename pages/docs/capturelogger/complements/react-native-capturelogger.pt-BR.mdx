@@ -1,0 +1,57 @@
+# react-native-capturelogger
+
+Um package construido para utilizar a API no desenvolvimento de aplicativos React Native.
+
+- Execute `npm i react-native-capturelogger` para instalar o package
+- Execute `npm i react-native-device-info` para instalar a dependência do package
+
+## Configurando o package
+
+Adicione em seu package.json as definições necessárias
+
+- `CaptureLogger`: Boolean | `true` Envia os erros para a nuvem | `false` Mostra os loggers no console
+- `CaptureLoggerHost`: String | Preencha com o dominio hospedado na vercel do CaptureLogger
+- `CaptureLoggerAccessToken`: String | Preencha com o access token do CaptureLogger
+- `CaptureLoggerBundleID`: Boolean | Envia `application bundle identifier` para a nuvem
+- `CaptureLoggerIgnore`: Object | Preencha com o/os `error.code from catch` a ser ignorado ao enviar
+
+Exemplo de um package.json
+
+```json
+{
+  "name": "builder",
+  "version": "1.0",
+  "private": true,
+  "CaptureLogger": true,
+  "CaptureLoggerHost": "https://examplename.vercel.app.com",
+  "CaptureLoggerAccessToken": "e632efe_token_here_5452b",
+  "CaptureLoggerBundleID": true,
+  "CaptureLoggerIgnore": ["ERR_NETWORK"],
+  "scripts": {
+    "android": "react-native run-android"
+  }
+}
+```
+
+## Método de uso
+
+Importe o package na sua aplicação
+
+`import { registerLogger } from 'react-native-capturelogger';`
+
+Registre os logs de evento
+
+`registerLogger(type, action, input, output, ignore, message);`
+
+- `type`: Number | 1 - `info` 2 - `warn` 3 - `error`
+- `action`: String | Nome do código de referência
+- `input`: Variable | Dados inseridos no código de referência
+- `output`: Variable | Dados retornados do código de referência
+- `ignore`: String | `error.code from catch` a ser ignorado ao enviar
+- `message`: String | Mensagem personalizada (Opcional)
+
+> Log e Warn não são enviados para a nuvem.
+
+> output.code pode ser incluido no output para filtrar, ou pode ser um error code de um catch
+
+> Exemplo de output.code: ERR_NETWORK

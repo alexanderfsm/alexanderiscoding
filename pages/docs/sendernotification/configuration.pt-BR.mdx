@@ -1,0 +1,73 @@
+# Configuração
+
+## Implantar automaticamente
+
+Você pode começar criando seu próprio projeto e implantando na Vercel clicando no link:
+
+<a className="inline-flex mt-3" target="_blank" href="https://vercel.com/new/clone?s=https://github.com/alexanderiscoding/SenderNotification">
+  ![](https://vercel.com/button)
+</a>
+
+A Vercel criará um fork do repositório e implantará o projeto para você. Depois de concluído, cada confirmação no repositório será implantada automaticamente.
+
+## Implantar manualmente
+
+Você começa fazendo um fork do [repositório](https://github.com/alexanderiscoding/SenderNotification) e implementando na Vercel.
+
+Depois de concluído, cada confirmação no repositório será implantada automaticamente.
+
+## Configurando a vercel
+
+**Ao configurar um projeto na vercel, adicione as Environment Variables:**
+
+NAME: `TOKEN`
+
+VALUE: `token gerado`
+
+**Como gerar novos tokens**
+
+Para token com 32 caracteres: `https://generate-secret.vercel.app/32`
+
+Para token com 64 caracteres: `https://generate-secret.vercel.app/64`
+
+**Para adicionar as Environment Variables do Telegram:**
+
+NAME: `TELEGRAM_TOKEN`
+
+VALUE: `access token`
+
+> Se não quiser sempre especificar um Chat ID, adicione também:
+
+NAME: `TELEGRAM_DEFAULT`
+
+VALUE: `chat id`
+
+[Postagem de como configurar o Telegram](https://core.telegram.org/bots/features#creating-a-new-bot)
+
+**Para adicionar as Environment Variables do Discord:**
+
+NAME: `DISCORD_WEBHOOK`
+
+VALUE: `Webhook URL`
+
+[Postagem de como configurar o Discord](https://support.discord.com/hc/pt-br/articles/228383668-Usando-Webhooks)
+
+**Para adicionar as Environment Variables do Slack:**
+
+NAME: `SLACK_WEBHOOK`
+
+VALUE: `Webhook URL`
+
+[Postagem de como configurar o Slack](https://api.slack.com/messaging/webhooks)
+
+**Para adicionar as Environment Variables do Google Chat:**
+
+NAME: `GCHAT_WEBHOOK`
+
+VALUE: `Webhook URL`
+
+[Postagem de como configurar o Google Chat](https://developers.google.com/chat/how-tos/webhooks#node.js)
+
+import { Callout } from "nextra-theme-docs";
+
+<Callout>É necessário fazer o Redeploy with existing Build Cache, após alterar as Environment Variables, se elas já estiverem configuradas ou foram configuradas após deploy na vercel.</Callout>

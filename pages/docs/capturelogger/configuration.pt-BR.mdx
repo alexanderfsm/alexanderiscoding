@@ -1,0 +1,69 @@
+# Configuração
+
+import { Callout } from "nextra-theme-docs";
+
+<Callout type="warning">É necessário o **CloudFirebase** estar configurado.</Callout>
+
+## Implantar automaticamente
+
+Você pode começar criando seu próprio projeto e implantando na Vercel clicando no link:
+
+<a className="inline-flex mt-3" target="_blank" href="https://vercel.com/new/clone?s=https://github.com/alexanderiscoding/CaptureLogger">
+  ![](https://vercel.com/button)
+</a>
+
+A Vercel criará um fork do repositório e implantará o projeto para você. Depois de concluído, cada confirmação no repositório será implantada automaticamente.
+
+## Implantar manualmente
+
+Você começa fazendo um fork do [repositório](https://github.com/alexanderiscoding/CaptureLogger) e implementando na Vercel.
+
+Depois de concluído, cada confirmação no repositório será implantada automaticamente.
+
+## Configurando a vercel
+
+**Ao configurar um projeto na vercel, adicione as Environment Variables:**
+
+NAME: `TOKEN`
+
+VALUE: `token gerado`
+
+NAME: `ACCESS_TOKEN`
+
+VALUE: `token gerado`
+
+**Como gerar novos tokens**
+
+Para token com 32 caracteres: `https://generate-secret.vercel.app/32`
+
+Para token com 64 caracteres: `https://generate-secret.vercel.app/64`
+
+**Adicione também as Environment Variables do CloudFirebase:**
+
+NAME: `CLOUD_HOST`
+
+VALUE: `dominio hospedado na vercel do CloudFirebase`
+
+NAME: `CLOUD_TOKEN`
+
+VALUE: `mesmo token do CloudFirebase`
+
+**Para configurar as notificações, Adicione também as do SenderNotification:**
+
+NAME: `SENDER_HOST`
+
+VALUE: `dominio hospedado na vercel do SenderNotification`
+
+NAME: `SENDER_TOKEN`
+
+VALUE: `mesmo token do SenderNotification`
+
+NAME: `SENDER_SERVICE`
+
+VALUE: Number | `1` - telegram `2` - discord `3` - slack `4` - google chat
+
+NAME: `SENDER_MODE`
+
+VALUE: Number | `1` - somente mensagem `2` - mensagem com botão `3` - mensagem completa com botão
+
+<Callout>É necessário fazer o Redeploy with existing Build Cache, após alterar as Environment Variables, se elas já estiverem configuradas ou foram configuradas após deploy na vercel.</Callout>

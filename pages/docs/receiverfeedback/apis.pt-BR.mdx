@@ -1,0 +1,40 @@
+# APIs
+
+## URL
+
+```
+https://examplename.vercel.app.com/api/new
+```
+
+## Método de uso
+
+```js
+fetch("https://examplename.vercel.app.com/api/new", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+  },
+  body: JSON.stringify({
+    level: 3,
+    text: "feedback",
+    source: "origin from receiver feedback (website, desktop app, mobile app)",
+    version: "1.0",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `level`: Number | 1, 2, 3, 4 ou 5
+- `text`: String
+- `source`: String
+- `version`: String
+- `message`: String | Mensagem personalizada (Opcional)
+- `application`: String (Opcional)
+
+## Parâmetros de resposta
+
+- `200`: Retorna o código do documento criado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
