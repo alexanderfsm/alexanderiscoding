@@ -1,19 +1,71 @@
 # APIs
 
-## URL
-
-```
-https://examplename.vercel.app.com/api/new
-```
-
-## Método de uso
+## Validar requisição para Desktop ou Mobile App
 
 ```js
-fetch("https://examplename.vercel.app.com/api/new", {
+fetch("https://examplename.vercel.app/api/shield", {
   method: "POST",
   headers: {
     "Content-Type": "application/json; charset=UTF-8",
-    Authorization: "e632efe_token_here_5452b",
+    Authorization: "e632efe_access_token_5452b",
+  },
+});
+```
+
+### Parâmetros de resposta
+
+- `200`: Retorna os códigos de autorização válido por 30 segundos
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Validar requisição para Website
+
+Primeira requisição
+
+```js
+fetch("https://examplename.vercel.app/api/shield", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+  },
+});
+```
+
+Próximas requisições
+
+```js
+fetch("https://examplename.vercel.app/api/shield", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+  },
+  body: JSON.stringify({
+    tag: "1670254702349",
+  }),
+});
+```
+
+### Parâmetros para envio
+
+- `tag`: String | Tag da primeira requisição
+
+### Parâmetros de resposta
+
+- `200`: Retorna os códigos de autorização válido por 30 segundos
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Criar um novo registro
+
+```js
+fetch("https://examplename.vercel.app/api/new", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    tag: "1670254702349",
+    hash: "e632efe_hash_here_5452b",
   },
   body: JSON.stringify({
     action: "function name or action name",
@@ -30,8 +82,8 @@ fetch("https://examplename.vercel.app.com/api/new", {
 - `input`: String
 - `output`: String
 - `version`: String
-- `message`: String | Mensagem personalizada (Opcional)
 - `application`: String (Opcional)
+- `message`: String | Mensagem personalizada (Opcional)
 
 ## Parâmetros de resposta
 
