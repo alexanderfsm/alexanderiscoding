@@ -48,7 +48,7 @@ fetch("https://examplename.vercel.app/api/shield", {
 
 ### Parâmetros para envio
 
-- `tag`: Nome da tabela existente ou a ser criada
+- `tag`: String | Tag da primeira requisição
 
 ### Parâmetros de resposta
 
@@ -57,19 +57,15 @@ fetch("https://examplename.vercel.app/api/shield", {
 - `406`: Retorna a mensagem de dados insuficiente
 - `500`: Retorna o erro ocorrido
 
-## URL
-
-```
-https://examplename.vercel.app.com/api/new
-```
-
-## Método de uso
+## Criar um novo registro
 
 ```js
-fetch("https://examplename.vercel.app.com/api/new", {
+fetch("https://examplename.vercel.app/api/new", {
   method: "POST",
   headers: {
     "Content-Type": "application/json; charset=UTF-8",
+    tag: "1670254702349",
+    hash: "e632efe_hash_here_5452b",
   },
   body: JSON.stringify({
     level: 3,
@@ -86,8 +82,8 @@ fetch("https://examplename.vercel.app.com/api/new", {
 - `text`: String
 - `source`: String
 - `version`: String
-- `message`: String | Mensagem personalizada (Opcional)
 - `application`: String (Opcional)
+- `message`: String | Mensagem personalizada (Opcional)
 
 ## Parâmetros de resposta
 

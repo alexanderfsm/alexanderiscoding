@@ -50,7 +50,13 @@ const config: DocsThemeConfig = {
     placeholder: "Procurar...",
     loading: "Procurando...",
   },
-  i18n: [{ locale: "pt-BR", text: "Português Brasileiro" }],
+  i18n: [
+    { locale: "pt-BR", text: "Português Brasileiro" },
+    { locale: "en-US", text: "English" },
+    { locale: "ko", text: "한국어" },
+    { locale: "ja", text: "日本語" },
+    { locale: "zh-CN", text: "简体中文" },
+  ],
   notFound: {
     content: "Envie um problema sobre link quebrado →",
     labels: "notfound",
