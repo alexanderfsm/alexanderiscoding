@@ -4,7 +4,7 @@ import { DocsThemeConfig } from "nextra-theme-docs";
 const config: DocsThemeConfig = {
   logo: <span className="logo-name">Alexanderiscoding</span>,
   project: {
-    link: "https://github.com/alexanderfsm/alexanderiscoding",
+    link: "https://github.com/alexanderiscoding",
   },
   docsRepositoryBase: "https://github.com/alexanderfsm/alexanderiscoding",
   head: (
