@@ -18,5 +18,10 @@
     "name": "CaptureLogger",
     "description": "🛠 API para visualizações de logs",
     "link": "/docs/capturelogger/introduction"
+  },
+  {
+    "name": "React Native Swipeable Panel",
+    "description": "Um painel inferior deslizante e fácil de usar para seus projetos React Native.",
+    "link": "https://www.npmjs.com/package/react-native-swipeable-panel"
   }
 ]
