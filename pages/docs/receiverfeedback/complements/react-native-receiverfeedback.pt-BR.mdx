@@ -1,0 +1,50 @@
+# react-native-receiverfeedback
+
+Um package construido para utilizar a API no desenvolvimento de aplicativos React Native.
+
+- Execute `npm i react-native-receiverfeedback` para instalar o package
+- Execute `npm i react-native-device-info` para instalar a dependência do package
+
+## Configurando o package
+
+Adicione em seu package.json as definições necessárias
+
+- `ReceiverFeedbackHost`: Boolean | Preencha com o dominio hospedado na vercel do ReceiverFeedback
+- `ReceiverFeedbackAccessToken`: String | Preencha com o access token do ReceiverFeedback
+- `ReceiverFeedbackSource`: String | Pode ser usado para identificar a origem do feedback
+- `ReceiverFeedbackBundleID`: Boolean | Envia `application bundle identifier` para a nuvem
+
+Exemplo de um package.json
+
+```json
+{
+  "name": "builder",
+  "version": "1.0",
+  "private": true,
+  "ReceiverFeedbackHost": "https://examplename.vercel.app.com",
+  "ReceiverFeedbackAccessToken": "e632efe_token_here_5452b",
+  "ReceiverFeedbackSource": "React Native App",
+  "ReceiverFeedbackBundleID": true,
+  "scripts": {
+    "android": "react-native run-android"
+  }
+}
+```
+
+## Método de uso
+
+Importe o package na sua aplicação
+
+`import Panel from 'react-native-receiverfeedback';`
+
+Mostre a tela para receber os feedbacks
+
+<div className="nx-mt-6">
+  <img src="https://alexanderiscoding.com/imgs/react-native-swipeable-panel.jpg" width="auto" height="388" />
+</div>
+
+`<Panel show={showFeedback} close={setShowFeedback} />`
+
+- `show`: Boolean | Mostrar/Ocultar o feedback
+- `close`: Function | Executa a função ao fechar o feedback
+- `backgroundColor`: String | Altera cor de fundo padrão (Opcional)
