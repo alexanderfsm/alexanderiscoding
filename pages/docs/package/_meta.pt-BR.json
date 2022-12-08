@@ -2,5 +2,13 @@
   "react-native-swipeable-panel": {
     "title": "react-native-swipeable-panel",
     "type": "page"
+  },
+  "react-native-receiverfeedback": {
+    "title": "react-native-receiverfeedback",
+    "type": "page"
+  },
+  "react-native-capturelogger": {
+    "title": "react-native-capturelogger",
+    "type": "page"
   }
 }
