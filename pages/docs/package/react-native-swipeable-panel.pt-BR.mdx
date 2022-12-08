@@ -1,0 +1,44 @@
+<div className="center-text">
+
+# React Native Swipeable Panel
+
+**React Native Swipeable Panel** é um painel inferior deslizante e fácil de usar para seus projetos React Native. Você pode fechar deslizando para baixo. Sinta-se livre para incluir dentro do painel.
+
+</div>
+
+<div align="center" className="nx-mt-6">
+  <img src="https://alexanderiscoding.com/imgs/react-native-swipeable-panel.jpg" width="auto" height="388" />
+</div>
+
+## Método de uso
+
+Instale o package
+
+`npm i react-native-swipeable-panel`
+
+Importe o package na sua aplicação
+
+`import Panel from 'react-native-receiverfeedback';`
+
+## Exemplo de uso
+
+```js copy
+import React, { useState } from "react";
+import { View, Text } from "react-native";
+import Panel from "react-native-swipeable-panel";
+
+export default function Page() {
+  const [showPanel, setShowPanel] = useState(true);
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Panel show={showPanel} close={setShowPanel} backgroundColor="gray">
+        <Text style={{ fontStyle: "bold", fontSize: 20, color: "#000000" }}>Alexanderiscoding</Text>
+      </Panel>
+    </View>
+  );
+}
+```
+
+- `show`: Boolean | Mostrar/Ocultar o painel
+- `close`: Function | Executa a função ao fechar o painel
+- `backgroundColor`: String | Altera cor de fundo padrão (Opcional)
