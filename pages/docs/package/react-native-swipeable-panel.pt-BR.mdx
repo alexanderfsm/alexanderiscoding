@@ -30,8 +30,8 @@ import Panel from "react-native-swipeable-panel";
 export default function Page() {
   const [showPanel, setShowPanel] = useState(true);
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Panel show={showPanel} close={setShowPanel} backgroundColor="gray">
+    <View>
+      <Panel show={showPanel} close={setShowPanel}>
         <Text style={{ fontStyle: "bold", fontSize: 20, color: "#000000" }}>Alexanderiscoding</Text>
       </Panel>
     </View>
