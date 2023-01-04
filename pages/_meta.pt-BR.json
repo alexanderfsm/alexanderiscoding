@@ -26,23 +26,13 @@
     "title": "Termos",
     "type": "page"
   },
-  "services": {
-    "title": "Serviços",
-    "type": "page",
-    "theme": {
-      "timestamp": false
-    }
-  },
-  "projects": {
-    "title": "Projetos",
-    "type": "page",
-    "theme": {
-      "timestamp": false
-    }
-  },
   "docs": {
     "title": "Documentação",
-    "type": "page"
+    "type": "page",
+    "theme": {
+      "timestamp": false,
+      "pagination": false
+    }
   },
   "contact": {
     "title": "Contato ↗",

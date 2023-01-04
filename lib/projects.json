@@ -1,26 +1,31 @@
 [
   {
     "name": "CloudFirebase",
+    "type": "project",
     "description": "🛰 API para comunicações com o Firebase",
     "link": "/docs/cloudfirebase/introduction"
   },
   {
     "name": "SenderNotification",
+    "type": "project",
     "description": "🔔 API para envio de notificações",
     "link": "/docs/sendernotification/introduction"
   },
   {
     "name": "ReceiverFeedback",
+    "type": "project",
     "description": "🎊 API para recebimento de feedbacks",
     "link": "/docs/receiverfeedback/introduction"
   },
   {
     "name": "CaptureLogger",
+    "type": "project",
     "description": "🛠 API para visualizações de logs",
     "link": "/docs/capturelogger/introduction"
   },
   {
     "name": "React Native Swipeable Panel",
+    "type": "project",
     "description": "Um painel inferior deslizante e fácil de usar para seus projetos React Native.",
     "link": "/docs/package/react-native-swipeable-panel"
   }
