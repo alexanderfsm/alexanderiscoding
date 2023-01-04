@@ -1,44 +1,26 @@
 {
   "cloudfirebase": {
     "title": "CloudFirebase",
-    "type": "page",
-    "theme": {
-      "pagination": false
-    }
+    "type": "page"
   },
   "capturelogger": {
     "title": "CaptureLogger",
-    "type": "page",
-    "theme": {
-      "pagination": false
-    }
+    "type": "page"
   },
   "youdramalist": {
     "title": "YouDramaList",
-    "type": "page",
-    "theme": {
-      "pagination": false
-    }
+    "type": "page"
   },
   "receiverfeedback": {
     "title": "ReceiverFeedback",
-    "type": "page",
-    "theme": {
-      "pagination": false
-    }
+    "type": "page"
   },
   "sendernotification": {
     "title": "SenderNotification",
-    "type": "page",
-    "theme": {
-      "pagination": false
-    }
+    "type": "page"
   },
   "package": {
     "title": "Package",
-    "type": "page",
-    "theme": {
-      "pagination": false
-    }
+    "type": "page"
   }
 }
