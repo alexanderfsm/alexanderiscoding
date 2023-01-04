@@ -1,0 +1,8 @@
+[
+  {
+    "name": "YouDramaList",
+    "type": "service",
+    "description": "Sua lista de dramas previamente selecionadas e catalogadas do YouTube",
+    "link": "/docs/youdramalist/introduction"
+  }
+]

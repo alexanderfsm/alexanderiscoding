@@ -28,11 +28,5 @@
     "type": "project",
     "description": "Um painel inferior deslizante e fácil de usar para seus projetos React Native.",
     "link": "/docs/package/react-native-swipeable-panel"
-  },
-  {
-    "name": "YouDramaList",
-    "type": "service",
-    "description": "Sua lista de dramas previamente selecionadas e catalogadas do YouTube",
-    "link": "/docs/youdramalist/introduction"
   }
 ]
