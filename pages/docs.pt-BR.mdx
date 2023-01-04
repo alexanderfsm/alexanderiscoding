@@ -25,7 +25,7 @@ export default function Page() {
       <div className="grid mt-12 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:gap-x-8 lg:gap-y-12">
         {projects ?
           projects.map((project, index) => {
-            return <Box {...project} key={index} />
+            return <Box {...project} key={index} type="project" />
           })
           :
           null
@@ -52,7 +52,7 @@ export default function Page() {
       <div className="grid mt-12 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:gap-x-8 lg:gap-y-12">
         {services ?
           services.map((project, index) => {
-            return <Box {...project} key={index} />
+            return <Box {...project} key={index} type="service" />
           })
           :
           null
