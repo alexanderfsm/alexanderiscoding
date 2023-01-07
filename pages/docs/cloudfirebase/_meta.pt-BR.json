@@ -2,5 +2,6 @@
   "introduction": "Introdução",
   "configuration": "Configuração",
   "firestore": "Firebase",
-  "database": "Database"
+  "database": "Database",
+  "messaging": "Messaging"
 }
