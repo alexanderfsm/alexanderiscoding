@@ -1,0 +1,66 @@
+# Messaging
+
+## Enviar uma notificação
+
+```js
+fetch("https://examplename.vercel.app/api/messaging/send", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    title: "Title Message",
+    body: "Content Message",
+    registrationToken: "Device Notification Token",
+  }),
+});
+```
+
+### Parâmetros para envio
+
+- `title`: Titulo da notificação
+- `body`: Conteúdo da notificação
+- `registrationToken`: Enviar mensagem para um dispositivo
+- `data`: Dados que serão enviados com a notificação
+- `topic`: Enviar mensagem para um tópico
+- `icon`: Notificação com opções de cores e ícones
+- `color`: Notificação com opções de cores e ícones
+- `image`: Notificação com uma imagem personalizada
+
+### Parâmetros de resposta
+
+- `200`: Retorna a mensagem de notificação enviada
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Alternar tokens entre tópicos
+
+```js
+fetch("https://examplename.vercel.app/api/messaging/topic", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    registrationTokens: ["Device Notification Token", "Device Notification Token 2"],
+    topic: "newsletters",
+    activate: true,
+  }),
+});
+```
+
+### Parâmetros para envio
+
+- `registrationTokens`: Tokens de dispositivos
+- `topic`: Nome do tópico
+- `activate`: Boolean | Ativar/Desativar dispositivos nesse tópico
+
+### Parâmetros de resposta
+
+- `200`: Retorna a mensagem de dispositivo registrado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
