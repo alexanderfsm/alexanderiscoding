@@ -16,12 +16,12 @@ fetch("https://examplename.vercel.app/api/fcm/new", {
 });
 ```
 
-## Parâmetros para envio
+#### Parâmetros para envio
 
 - `coduser`: Código de identificação
 - `registrationToken`: Token de notificação
 
-## Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de dispositivo registrado
 - `401`: Retorna a mensagem de permissão insuficiente
@@ -45,13 +45,13 @@ fetch("https://examplename.vercel.app/api/fcm/topic", {
 });
 ```
 
-## Parâmetros para envio
+### Parâmetros para envio
 
 - `coduser`: Código de identificação
 - `topic`: Nome do tópico
 - `activate`: Boolean | Ativar/Desativar dispositivo nesse tópico
 
-## Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de dispositivo alterado nesse tópico
 - `401`: Retorna a mensagem de permissão insuficiente
@@ -73,11 +73,11 @@ fetch("https://examplename.vercel.app/api/fcm/read", {
 });
 ```
 
-## Parâmetros para envio
+### Parâmetros para envio
 
 - `coduser`: Código de identificação
 
-## Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna o conteúdo do dispositivo registrado
 - `401`: Retorna a mensagem de permissão insuficiente
@@ -100,12 +100,12 @@ fetch("https://examplename.vercel.app/api/fcm/update", {
 });
 ```
 
-## Parâmetros para envio
+### Parâmetros para envio
 
 - `coduser`: Código de identificação
 - `registrationToken`: Token de notificação
 
-## Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de dispositivo atualizado
 - `401`: Retorna a mensagem de permissão insuficiente
@@ -129,7 +129,7 @@ fetch("https://examplename.vercel.app/api/fcm/send", {
 });
 ```
 
-## Parâmetros para envio
+### Parâmetros para envio
 
 - `title`: Titulo da notificação
 - `body`: Conteúdo da notificação
@@ -140,7 +140,7 @@ fetch("https://examplename.vercel.app/api/fcm/send", {
 - `color`: Notificação com opções de cores e ícones
 - `image`: Notificação com uma imagem personalizada
 
-## Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de notificação enviada
 - `401`: Retorna a mensagem de permissão insuficiente
