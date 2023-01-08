@@ -1,5 +1,9 @@
 {
   "introduction": "Introdução",
   "configuration": "Configuração",
-  "apis": "APIs"
+  "telegram": "Telegram",
+  "discord": "Discord",
+  "slack": "Slack",
+  "gchat": "Google Chat",
+  "fcm": "FCM"
 }

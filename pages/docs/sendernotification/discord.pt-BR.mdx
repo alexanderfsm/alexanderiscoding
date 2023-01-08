@@ -1,0 +1,63 @@
+# Discord
+
+## Enviar notificação
+
+```js
+fetch("https://examplename.vercel.app/api/discord/send", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    message: "Escreva aqui sua mensagem histórica",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `message`: String | Plain Text ou [documentação](https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-)
+
+## Parâmetros de resposta
+
+- `200`: Retorna a mensagem de enviado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Enviar notificação com conteúdo incorporado
+
+```js
+fetch("https://examplename.vercel.app/api/discord/embed", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    message: "Escreva aqui sua mensagem histórica",
+    content: {
+      title: "Forneça um titulo",
+      description: "Forneça uma descrição",
+      url: "Forneça uma url",
+      thumbnail: "Forneça uma url",
+    },
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `message`: String
+- `title`: String
+- `description`: String
+- `url`: String
+- `thumbnail`: String
+
+## Parâmetros de resposta
+
+- `200`: Retorna a mensagem de enviado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido

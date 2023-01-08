@@ -1,0 +1,147 @@
+# Google Chat
+
+## Enviar notificação
+
+```js
+fetch("https://examplename.vercel.app/api/gchat/send", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    message: "Escreva aqui sua mensagem histórica",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `message`: String | Plain Text ou [documentação](https://developers.google.com/chat/api/guides/message-formats/basic)
+
+## Parâmetros de resposta
+
+- `200`: Retorna o response do google chat
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Enviar notificação em formato (Order)
+
+```js
+fetch("https://examplename.vercel.app/api/gchat/order", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    header: {
+      title: "Forneça um titulo",
+      subtitle: "Forneça uma descrição",
+      imageUrl: "Forneça uma url",
+    },
+    buttons: [
+      {
+        text: "Forneça um texto",
+        url: "Forneça uma url",
+      },
+    ],
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `title`: String
+- `subtitle`: String
+- `imageUrl`: String
+- `text`: String
+- `url`: String
+
+## Parâmetros de resposta
+
+- `200`: Retorna o response do google chat
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Enviar notificação em formato de informação
+
+```js
+fetch("https://examplename.vercel.app/api/gchat/information", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    title: "Forneça um titulo",
+    subtitle: "Forneça uma descrição",
+    informations: [
+      {
+        title: "Forneça um titulo",
+        subtitle: "Forneça um subtitulo",
+      },
+    ],
+    buttons: [
+      {
+        text: "Forneça um texto",
+        url: "Forneça uma url",
+      },
+    ],
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `title`: String
+- `subtitle`: String
+- `text`: String
+- `url`: String
+
+## Parâmetros de resposta
+
+- `200`: Retorna o response do google chat
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Enviar notificação em formato (card)
+
+```js
+fetch("https://examplename.vercel.app/api/gchat/card", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    title: "Forneça um titulo",
+    subtitle: "Forneça um subtitulo",
+    multiline: "true",
+    label: "Forneça uma descrição",
+    icon: "Forneça um ícone",
+    buttonText: "Forneça um texto",
+    buttonUrl: "Forneça uma url",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `title`: String
+- `subtitle`: String
+- `multiline`: String Boolean
+- `label`: String
+- `icon`: String | [documentação](https://developers.google.com/chat/api/guides/message-formats/cards#builtinicons)
+- `buttonText`: String
+- `buttonUrl`: String
+
+## Parâmetros de resposta
+
+- `200`: Retorna o response do google chat
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
