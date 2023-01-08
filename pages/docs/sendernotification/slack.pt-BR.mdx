@@ -15,11 +15,11 @@ fetch("https://examplename.vercel.app/api/slack/send", {
 });
 ```
 
-## Parâmetros para envio
+### Parâmetros para envio
 
 - `message`: String
 
-## Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de enviado
 - `401`: Retorna a mensagem de permissão insuficiente
@@ -41,11 +41,11 @@ fetch("https://examplename.vercel.app/api/slack/markdown", {
 });
 ```
 
-## Parâmetros para envio
+### Parâmetros para envio
 
 - `message`: String | [documentação](https://api.slack.com/reference/surfaces/formatting)
 
-## Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de enviado
 - `401`: Retorna a mensagem de permissão insuficiente
@@ -73,14 +73,14 @@ fetch("https://examplename.vercel.app/api/slack/information", {
 });
 ```
 
-## Parâmetros para envio
+### Parâmetros para envio
 
 - `header`: String | plain text
 - `left`: String | markdown
 - `right`: String | markdown
 - `footer`: String | markdown
 
-## Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de enviado
 - `401`: Retorna a mensagem de permissão insuficiente
@@ -104,13 +104,13 @@ fetch("https://examplename.vercel.app/api/slack/card", {
 });
 ```
 
-## Parâmetros para envio
+### Parâmetros para envio
 
 - `message`: String | markdown
 - `buttonText`: String | plain text
 - `buttonUrl`: String
 
-## Parâmetros de resposta
+### Parâmetros de resposta
 
 - `200`: Retorna a mensagem de enviado
 - `401`: Retorna a mensagem de permissão insuficiente
