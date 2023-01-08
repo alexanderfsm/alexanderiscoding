@@ -1,0 +1,148 @@
+# FCM
+
+## Registrar dispositivo
+
+```js
+fetch("https://examplename.vercel.app/api/fcm/new", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    coduser: "User Identification",
+    registrationToken: "Device Notification Token",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `coduser`: Código de identificação
+- `registrationToken`: Token de notificação
+
+## Parâmetros de resposta
+
+- `200`: Retorna a mensagem de dispositivo registrado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Registrar dispositivo em um tópico
+
+```js
+fetch("https://examplename.vercel.app/api/fcm/topic", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    coduser: "User Identification",
+    topic: "newsletters",
+    activate: true,
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `coduser`: Código de identificação
+- `topic`: Nome do tópico
+- `activate`: Boolean | Ativar/Desativar dispositivo nesse tópico
+
+## Parâmetros de resposta
+
+- `200`: Retorna a mensagem de dispositivo alterado nesse tópico
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Ler dispositivo
+
+```js
+fetch("https://examplename.vercel.app/api/fcm/read", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    coduser: "User Identification",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `coduser`: Código de identificação
+
+## Parâmetros de resposta
+
+- `200`: Retorna o conteúdo do dispositivo registrado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Atualizar dispositivo
+
+```js
+fetch("https://examplename.vercel.app/api/fcm/update", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    coduser: "User Identification",
+    registrationToken: "Device Notification Token",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `coduser`: Código de identificação
+- `registrationToken`: Token de notificação
+
+## Parâmetros de resposta
+
+- `200`: Retorna a mensagem de dispositivo atualizado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Enviar notificação
+
+```js
+fetch("https://examplename.vercel.app/api/fcm/send", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    title: "Title Message",
+    body: "Content Message",
+    coduser: "User Identification",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `title`: Titulo da notificação
+- `body`: Conteúdo da notificação
+- `coduser`: Enviar mensagem para um dispositivo
+- `data`: Dados que serão enviados com a notificação
+- `topic`: Enviar mensagem para um tópico
+- `icon`: Notificação com opções de cores e ícones
+- `color`: Notificação com opções de cores e ícones
+- `image`: Notificação com uma imagem personalizada
+
+## Parâmetros de resposta
+
+- `200`: Retorna a mensagem de notificação enviada
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido

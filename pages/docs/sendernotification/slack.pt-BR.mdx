@@ -1,0 +1,118 @@
+# Slack
+
+## Enviar notificação
+
+```js
+fetch("https://examplename.vercel.app/api/slack/send", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    message: "Escreva aqui sua mensagem histórica",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `message`: String
+
+## Parâmetros de resposta
+
+- `200`: Retorna a mensagem de enviado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Enviar notificação em formato markdown
+
+```js
+fetch("https://examplename.vercel.app/api/slack/markdown", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    message: "Escreva aqui sua mensagem *histórica*",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `message`: String | [documentação](https://api.slack.com/reference/surfaces/formatting)
+
+## Parâmetros de resposta
+
+- `200`: Retorna a mensagem de enviado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Enviar notificação em formato de informação
+
+```js
+fetch("https://examplename.vercel.app/api/slack/information", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    header: "Forneça um titulo",
+    informations: [
+      {
+        text: "Forneça um texto",
+      },
+    ],
+    footer: "Forneça uma descrição",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `header`: String | plain text
+- `left`: String | markdown
+- `right`: String | markdown
+- `footer`: String | markdown
+
+## Parâmetros de resposta
+
+- `200`: Retorna a mensagem de enviado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Enviar notificação em formato (card)
+
+```js
+fetch("https://examplename.vercel.app/api/slack/card", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    message: "Forneça um titulo",
+    buttonText: "Forneça um texto",
+    buttonUrl: "Forneça uma url",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `message`: String | markdown
+- `buttonText`: String | plain text
+- `buttonUrl`: String
+
+## Parâmetros de resposta
+
+- `200`: Retorna a mensagem de enviado
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido

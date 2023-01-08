@@ -1,0 +1,58 @@
+# Telegram
+
+## Enviar notificação
+
+```js
+fetch("https://examplename.vercel.app/api/telegram/send", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    message: "Escreva aqui sua mensagem histórica",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `chatID`: String
+- `message`: String
+- `custom`: String | `MarkdownV2` [documentação](https://core.telegram.org/bots/api#markdownv2-style) - `HTML` [documentação](https://core.telegram.org/bots/api#html-style) - `Markdown` [documentação](https://core.telegram.org/bots/api#markdown-style)
+
+## Parâmetros de resposta
+
+- `200`: Retorna o response do telegram
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
+
+## Enviar notificação em formato documento
+
+```js
+fetch("https://examplename.vercel.app/api/telegram/document", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+    Authorization: "e632efe_token_here_5452b",
+  },
+  body: JSON.stringify({
+    document: "Forneça uma url",
+    caption: "Forneça uma descrição",
+  }),
+});
+```
+
+## Parâmetros para envio
+
+- `chatID`: String
+- `document`: String
+- `caption`: String
+
+## Parâmetros de resposta
+
+- `200`: Retorna o response do telegram
+- `401`: Retorna a mensagem de permissão insuficiente
+- `406`: Retorna a mensagem de dados insuficiente
+- `500`: Retorna o erro ocorrido
